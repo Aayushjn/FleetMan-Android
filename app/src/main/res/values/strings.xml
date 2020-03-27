@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Fleet Manager</string>
+
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_registered">Register Here</string>
+    <string name="register">Register</string>
+    <string name="full_name">Full Name</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="role">Role</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="search">Search</string>
+    <string name="vin">VIN</string>
+    <string name="license_plate">License Plate</string>
+
+    <string name="set_vin">VIN: %s</string>
+    <string name="set_license_plate">License Plate: %s</string>
+    <string name="close">Close</string>
+    <string name="empty">Empty</string>
+    <string name="no_alerts_yet">No alerts yet</string>
+    <string name="set_health">%s: %s</string>
+    <string name="brake_system">Brake System</string>
+    <string name="tyre_system">Tyre System</string>
+    <string name="engine_system">Engine System</string>
+    <string name="fuel_system">Fuel System</string>
+    <string name="refresh">Refresh</string>
+    <string name="vehicle_count">%d\n%s</string>
+    <string name="alerts">Alerts</string>
+    <string name="clear">Clear</string>
+
+    <plurals name="vehicle">
+        <item quantity="one">Vehicle</item>
+        <item quantity="other">Vehicles</item>
+    </plurals>
+
+    <plurals name="hatchback">
+        <item quantity="one">Hatchback</item>
+        <item quantity="other">Hatchbacks</item>
+    </plurals>
+
+    <plurals name="sedan">
+        <item quantity="one">Sedan</item>
+        <item quantity="other">Sedans</item>
+    </plurals>
+
+    <plurals name="suv">
+        <item quantity="one">SUV</item>
+        <item quantity="other">SUVs</item>
+    </plurals>
+
+    <string-array name="roles_array">
+        <item>Admin</item>
+        <item>Maintenance</item>
+        <item>Insurance</item>
+        <item>Dev</item>
+    </string-array>
+</resources>

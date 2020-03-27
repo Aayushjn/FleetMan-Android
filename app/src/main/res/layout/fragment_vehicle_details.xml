@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_base_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="#F5F2D0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.skydoves.androidveil.VeilLayout
+                    android:id="@+id/veil_base_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:veilLayout_veiled="true"
+                    app:veilLayout_shimmerEnable="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_general_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#F5F2D0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_vin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="VIN: 12345678912345678"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_license_plate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_vin"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="License Plate: KA25ML7486"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_model"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_license_plate"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Model: Maruti Swift DZire"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_driver"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_model"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Driver: Extraordinarily Big Name"
+                                tools:ignore="RtlSymmetry" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </com.skydoves.androidveil.VeilLayout>
+
+                <com.skydoves.androidveil.VeilLayout
+                    android:id="@+id/veil_health_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:veilLayout_veiled="true"
+                    app:veilLayout_shimmerEnable="true"
+                    app:layout_constraintTop_toBottomOf="@id/veil_base_details"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:cardBackgroundColor="#F5F2D0">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_brake_health"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Braking System Health: 76.9"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_tyre_health"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_brake_health"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Tyre System Health: 76.9"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_engine_health"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_tyre_health"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Engine System Health: 76.9"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_fuel_health"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_engine_health"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Fuel System Health: 76.9"
+                                tools:ignore="RtlSymmetry" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/text_vehicle_health"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:textSize="18sp"
+                                app:layout_constraintTop_toBottomOf="@id/text_vehicle_fuel_health"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="Overall System Health: 76.9"
+                                tools:ignore="RtlSymmetry" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </com.skydoves.androidveil.VeilLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_brake_system"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="#F5F2D0"
+            app:layout_constraintTop_toBottomOf="@id/card_base_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/brake_system"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/ic_brake"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center_vertical"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_tyre_system"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="#F5F2D0"
+            app:layout_constraintTop_toBottomOf="@id/card_brake_system"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tyre_system"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/ic_tyre"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center_vertical"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_engine_system"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="#F5F2D0"
+            app:layout_constraintTop_toBottomOf="@id/card_tyre_system"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/engine_system"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/ic_engine"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center_vertical"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_fuel_system"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="#F5F2D0"
+            app:layout_constraintTop_toBottomOf="@id/card_engine_system"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fuel_system"
+                android:textSize="18sp"
+                android:drawableStart="@drawable/ic_fuel"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center_vertical"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
