@@ -16,14 +16,8 @@
 
     <string name="set_vin">VIN: %s</string>
     <string name="set_license_plate">License Plate: %s</string>
-    <string name="close">Close</string>
-    <string name="empty">Empty</string>
     <string name="no_alerts_yet">No alerts yet</string>
     <string name="set_health">%s: %s</string>
-    <string name="brake_system">Brake System</string>
-    <string name="tyre_system">Tyre System</string>
-    <string name="engine_system">Engine System</string>
-    <string name="fuel_system">Fuel System</string>
     <string name="refresh">Refresh</string>
     <string name="vehicle_count">%d\n%s</string>
     <string name="alerts">Alerts</string>

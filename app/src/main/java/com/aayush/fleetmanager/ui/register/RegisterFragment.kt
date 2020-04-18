@@ -128,14 +128,14 @@ class RegisterFragment: BaseFragment<FragmentRegisterBinding>() {
                     .observe(viewLifecycleOwner) {
                         when(it) {
                             is Success<*> -> {
-                                binding.layoutProgress.progressWheel.visibility = View.GONE
+                                binding.layoutProgress.progressBar.visibility = View.GONE
                                 findNavController().navigate(RegisterFragmentDirections.navigateToDashboardFragment())
                             }
                             is Failure -> {
-                                binding.layoutProgress.progressWheel.visibility = View.GONE
+                                binding.layoutProgress.progressBar.visibility = View.GONE
                                 requireContext().toast(it.reason)
                             }
-                            is Loading -> binding.layoutProgress.progressWheel.visibility = View.VISIBLE
+                            is Loading -> binding.layoutProgress.progressBar.visibility = View.VISIBLE
                         }
                     }
             }

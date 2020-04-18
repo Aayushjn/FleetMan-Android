@@ -195,7 +195,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/brake_system"
+                android:text="@string/title_brake_system"
                 android:textSize="18sp"
                 android:drawableStart="@drawable/ic_brake"
                 android:drawablePadding="5dp"
@@ -219,7 +219,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tyre_system"
+                android:text="@string/title_tyre_system"
                 android:textSize="18sp"
                 android:drawableStart="@drawable/ic_tyre"
                 android:drawablePadding="5dp"
@@ -243,7 +243,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/engine_system"
+                android:text="@string/title_engine_system"
                 android:textSize="18sp"
                 android:drawableStart="@drawable/ic_engine"
                 android:drawablePadding="5dp"
@@ -266,12 +266,12 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/fuel_system"
-                android:textSize="18sp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
                 android:drawableStart="@drawable/ic_fuel"
                 android:drawablePadding="5dp"
-                android:layout_gravity="center_vertical"/>
+                android:text="@string/title_fuel_system"
+                android:textSize="18sp" />
 
         </com.google.android.material.card.MaterialCardView>
 

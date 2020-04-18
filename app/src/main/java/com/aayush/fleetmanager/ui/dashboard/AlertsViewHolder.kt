@@ -41,15 +41,15 @@ class AlertsViewHolder(
         when(alert.type) {
             AlertType.SEVERE -> {
                 binding.cardAlert.setBackgroundColor(ContextCompat.getColor(root.context, R.color.severe))
-                binding.textVin.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnError))
-                binding.textLicensePlate.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnError))
-                binding.textAlert.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnError))
+                binding.textVin.setTextColor(ContextCompat.getColor(root.context, android.R.color.white))
+                binding.textLicensePlate.setTextColor(ContextCompat.getColor(root.context, android.R.color.white))
+                binding.textAlert.setTextColor(ContextCompat.getColor(root.context, android.R.color.white))
             }
             AlertType.WARNING -> {
                 binding.cardAlert.setBackgroundColor(ContextCompat.getColor(root.context, R.color.warning))
-                binding.textVin.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnSecondary))
-                binding.textLicensePlate.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnSecondary))
-                binding.textAlert.setTextColor(ContextCompat.getColor(root.context, R.color.colorOnSecondary))
+                binding.textVin.setTextColor(ContextCompat.getColor(root.context, android.R.color.black))
+                binding.textLicensePlate.setTextColor(ContextCompat.getColor(root.context, android.R.color.black))
+                binding.textAlert.setTextColor(ContextCompat.getColor(root.context, android.R.color.black))
             }
         }
     }

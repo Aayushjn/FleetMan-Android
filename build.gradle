@@ -4,7 +4,7 @@ buildscript {
     ext.work_manager_version = "2.3.4"
     ext.room_version = "2.2.5"
     ext.lifecycle_version = "2.2.0"
-    ext.navigation_version = "2.2.0"
+    ext.navigation_version = "2.2.2"
     ext.dagger_version = "2.27"
 
     repositories {

@@ -6,15 +6,15 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_title"
+        fontPath="fonts/montserrat/Montserrat-Bold.ttf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/tyre_system"
+        android:text="@string/title_tyre_system"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        fontPath="fonts/montserrat/Montserrat-Bold.ttf"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_tyre_pressure"

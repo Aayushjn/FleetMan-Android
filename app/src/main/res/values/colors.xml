@@ -6,12 +6,6 @@
     <color name="colorSecondaryVariant">#ffbd4f</color>
     <color name="colorOnPrimary">#ffffff</color>
     <color name="colorOnSecondary">#000000</color>
-    <color name="colorSurface">#ffffff</color>
-    <color name="colorOnSurface">#000000</color>
-    <color name="colorError">#B00020</color>
-    <color name="colorOnError">#FFFFFF</color>
-    <color name="primaryText">#FFFFFF</color>
-    <color name="buttonText">#000000</color>
-    <color name="severe">#B00020</color>
-    <color name="warning">#FFEB3B</color>
+    <color name="severe">#b00020</color>
+    <color name="warning">#ffeb3b</color>
 </resources>
