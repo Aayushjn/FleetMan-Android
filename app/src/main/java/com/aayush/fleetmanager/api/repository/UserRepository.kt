@@ -1,13 +1,15 @@
 package com.aayush.fleetmanager.api.repository
 
 import com.aayush.fleetmanager.api.RestApi
-import com.aayush.fleetmanager.util.common.*
+import com.aayush.fleetmanager.util.common.State
+import com.aayush.fleetmanager.util.common.State.*
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class UserRepository private constructor(private val restApi: RestApi) {
-    fun registerUser(name: String, email: String, password: String, role: String): Flow<Result> = flow {
+class UserRepository @Inject constructor(private val restApi: RestApi) {
+    fun registerUser(name: String, email: String, password: String, role: String): Flow<State> = flow {
         emit(Loading)
         when(val response = restApi.registerUser(name, email, password, role)) {
             is NetworkResponse.Success -> emit(Success(response.body))
@@ -16,7 +18,7 @@ class UserRepository private constructor(private val restApi: RestApi) {
         }
     }
 
-    fun loginUser(email: String, password: String): Flow<Result> = flow {
+    fun loginUser(email: String, password: String): Flow<State> = flow {
         emit(Loading)
         when(val response = restApi.loginUser(email, password)) {
             is NetworkResponse.Success -> emit(Success(response.body))
@@ -25,7 +27,7 @@ class UserRepository private constructor(private val restApi: RestApi) {
         }
     }
 
-    fun logoutUser(email: String): Flow<Result> = flow {
+    fun logoutUser(email: String): Flow<State> = flow {
         emit(Loading)
         when(val response = restApi.logoutUser(email)) {
             is NetworkResponse.Success -> emit(Success(response.body))
@@ -39,6 +41,4 @@ class UserRepository private constructor(private val restApi: RestApi) {
             }
         }
     }
-
-    companion object: SingletonHolder<UserRepository, RestApi>(::UserRepository)
 }

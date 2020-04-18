@@ -22,18 +22,16 @@ data class Alert(
 ) {
     companion object {
         @JvmStatic
-        fun fromMap(map: Map<String, String>): Alert? {
-            return try {
-                Alert(
-                    checkNotNull(map["vin"]),
-                    checkNotNull(map["license_plate"]),
-                    checkNotNull(map["text"]),
-                    AlertType.valueOf(checkNotNull(map["type"]))
-                )
-            } catch (e: IllegalArgumentException) {
-                Timber.d("Invalid alert type: ${map["type"]}")
-                null
-            }
+        fun fromMap(map: Map<String, String>): Alert? = try {
+            Alert(
+                checkNotNull(map["vin"]),
+                checkNotNull(map["license_plate"]),
+                checkNotNull(map["text"]),
+                AlertType.valueOf(checkNotNull(map["type"]))
+            )
+        } catch (e: IllegalArgumentException) {
+            Timber.d("Invalid alert type: ${map["type"]}")
+            null
         }
     }
 }

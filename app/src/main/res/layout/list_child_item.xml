@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#F5F2D0">
+    android:background="#F5F2D0"
+    tools:viewBindingIgnore="true">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_vehicle_vin"

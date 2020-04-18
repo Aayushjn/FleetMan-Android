@@ -5,19 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="50dp">
-
-<!--    <ImageView-->
-<!--        android:id="@+id/img_down"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/ic_down"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/text_vehicle_title"-->
-<!--        app:layout_constraintTop_toTopOf="@id/text_vehicle_title"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/text_vehicle_title"-->
-<!--        tools:ignore="ContentDescription" />-->
+    android:layout_height="50dp"
+    tools:viewBindingIgnore="true">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_vehicle_title"

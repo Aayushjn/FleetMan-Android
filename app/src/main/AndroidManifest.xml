@@ -16,17 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
-        <activity android:name="com.aayush.fleetmanager.view.activity.MainActivity"
+        <activity android:name="com.aayush.fleetmanager.view.MainActivity"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".view.activity.VehicleDetailsActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activity.MainActivity" />
         </activity>
 
         <service android:name=".util.android.service.FirebaseService" android:exported="false">

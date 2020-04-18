@@ -2,10 +2,9 @@ package com.aayush.fleetmanager.util.android
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import com.aayush.fleetmanager.model.Role
+import com.aayush.fleetmanager.util.common.PREF_EMAIL
 import com.aayush.fleetmanager.util.common.PREF_IS_LOGGED_IN
 import com.aayush.fleetmanager.util.common.PREF_ROLE
-import com.aayush.fleetmanager.util.common.PREF_EMAIL
 
 fun loginUser(sharedPreferences: SharedPreferences, emailId: String, role: String) = sharedPreferences.edit {
     putString(PREF_EMAIL, emailId)

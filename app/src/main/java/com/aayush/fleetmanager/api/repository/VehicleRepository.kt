@@ -1,13 +1,15 @@
 package com.aayush.fleetmanager.api.repository
 
 import com.aayush.fleetmanager.api.RestApi
-import com.aayush.fleetmanager.util.common.*
+import com.aayush.fleetmanager.util.common.State
+import com.aayush.fleetmanager.util.common.State.*
 import com.haroldadmin.cnradapter.NetworkResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class VehicleRepository private constructor(private val restApi: RestApi) {
-    fun loadVehicleMinimals(): Flow<Result> = flow {
+class VehicleRepository @Inject constructor(private val restApi: RestApi) {
+    fun loadVehicleMinimals(): Flow<State> = flow {
         emit(Loading)
         when(val response = restApi.getVehicleMinimals()) {
             is NetworkResponse.Success -> emit(Success(response.body.mapped()))
@@ -16,7 +18,7 @@ class VehicleRepository private constructor(private val restApi: RestApi) {
         }
     }
 
-    fun loadVehicleCount(): Flow<Result> = flow {
+    fun loadVehicleCount(): Flow<State> = flow {
         emit(Loading)
         when(val response = restApi.getVehicleCount()) {
             is NetworkResponse.Success -> emit(Success(response.body))
@@ -25,7 +27,7 @@ class VehicleRepository private constructor(private val restApi: RestApi) {
         }
     }
 
-    fun loadVehicle(vin: String, email: String): Flow<Result> = flow {
+    fun loadVehicle(vin: String, email: String): Flow<State> = flow {
         emit(Loading)
         if (vin.length == 17) {
             when(val response = restApi.getVehicleByVinOrLicensePlate(vin, null, email)) {
@@ -41,6 +43,4 @@ class VehicleRepository private constructor(private val restApi: RestApi) {
             }
         }
     }
-
-    companion object: SingletonHolder<VehicleRepository, RestApi>(::VehicleRepository)
 }

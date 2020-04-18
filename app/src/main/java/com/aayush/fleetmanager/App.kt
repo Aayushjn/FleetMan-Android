@@ -3,27 +3,19 @@ package com.aayush.fleetmanager
 import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import com.aayush.fleetmanager.api.RestApi
-import com.aayush.fleetmanager.api.RestApiFactory
-import com.aayush.fleetmanager.db.AppDatabase
-import com.aayush.fleetmanager.util.android.getNotificationManager
 import com.aayush.fleetmanager.util.common.CHANNEL_ALERTS
 import com.aayush.fleetmanager.util.common.CHANNEL_ALERTS_ID
-import com.jakewharton.threetenabp.AndroidThreeTen
 import io.github.inflationx.calligraphy3.CalligraphyConfig
 import io.github.inflationx.calligraphy3.CalligraphyInterceptor
 import io.github.inflationx.viewpump.ViewPump
 
 class App: Application() {
-    val restApi: RestApi by lazy { RestApiFactory.create(this) }
-    val database: AppDatabase by lazy { AppDatabase.getDatabase(this) }
-
     override fun onCreate() {
         super.onCreate()
 
-        AndroidThreeTen.init(this)
         ViewPump.init(
             ViewPump.builder()
                 .addInterceptor(
@@ -43,9 +35,8 @@ class App: Application() {
                 enableLights(true)
                 lightColor = Color.BLUE
                 enableVibration(true)
-                vibrationPattern = longArrayOf(100, 200, 300, 400, 500, 400, 300, 200, 400)
                 setShowBadge(true)
-                getNotificationManager().createNotificationChannel(this)
+                (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(this)
             }
         }
     }

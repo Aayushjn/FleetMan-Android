@@ -2,13 +2,10 @@ package com.aayush.fleetmanager.util.common
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
-import org.threeten.bp.format.DateTimeFormatter
 import java.util.*
 
 const val BASE_URL = "http://192.168.43.211:8000/"
 const val CACHE_SIZE: Long = 10 * 1024 * 1024
-
-const val JSON_ALERTS = "AlertsJson"
 
 const val CHANNEL_ALERTS_ID = "AlertsChannelId"
 const val CHANNEL_ALERTS = "AlertsChannel"
@@ -17,11 +14,6 @@ const val PREF_FILE_KEY = "com.aayush.fleetmanager.PREF_FILE_KEY"
 const val PREF_EMAIL = "EmailPreference"
 const val PREF_ROLE = "RolePreference"
 const val PREF_IS_LOGGED_IN = "IsLoggedInPreference"
-
-const val TAG_LOGIN_FRAGMENT = "LoginFragmentTag"
-const val TAG_REGISTER_FRAGMENT = "RegisterFragmentTag"
-const val TAG_DASHBOARD_FRAGMENT = "DashboardFragmentTag"
-const val TAG_VEHICLE_DETAILS_FRAGMENT = "VehicleDetailsFragmentTag"
 
 const val EXTRA_EMAIL = "EmailExtra"
 const val EXTRA_ROLE = "RoleExtra"

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "af5376af567305cb7138390d7cff6587",
+    "identityHash": "f105547df5ade59943d43caeee607897",
     "entities": [
       {
-        "tableName": "Alert",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vin` TEXT NOT NULL, `licensePlate` TEXT NOT NULL, `alertText` TEXT NOT NULL, `type` TEXT NOT NULL, `id` TEXT NOT NULL, `read` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "tableName": "alert",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vin` TEXT NOT NULL, `license_plate` TEXT NOT NULL, `text` TEXT NOT NULL, `type` TEXT NOT NULL, `id` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "vin",
@@ -16,13 +16,13 @@
           },
           {
             "fieldPath": "licensePlate",
-            "columnName": "licensePlate",
+            "columnName": "license_plate",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "alertText",
-            "columnName": "alertText",
+            "fieldPath": "text",
+            "columnName": "text",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -36,12 +36,6 @@
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "read",
-            "columnName": "read",
-            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -58,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'af5376af567305cb7138390d7cff6587')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f105547df5ade59943d43caeee607897')"
     ]
   }
 }

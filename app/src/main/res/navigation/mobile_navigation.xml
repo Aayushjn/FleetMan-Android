@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_dashboard"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.aayush.fleetmanager.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/navigate_to_register_fragment"
+            app:destination="@+id/navigation_register"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_login"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+
+        <action
+            android:id="@+id/navigate_to_vehicle_details_fragment"
+            app:destination="@+id/navigation_vehicle_details" />
+
+        <action
+            android:id="@+id/navigate_to_login_fragment"
+            app:destination="@+id/navigation_login"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_dashboard"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.aayush.fleetmanager.ui.login.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/navigate_to_register_fragment"
+            app:destination="@+id/navigation_register"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_register"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+
+        <action
+            android:id="@+id/navigate_to_dashboard_fragment"
+            app:destination="@+id/navigation_dashboard"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_login"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.aayush.fleetmanager.ui.register.RegisterFragment"
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/navigate_to_dashboard_fragment"
+            app:destination="@+id/navigation_dashboard"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/navigation_dashboard"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_vehicle_details"
+        android:name="com.aayush.fleetmanager.ui.details.VehicleDetailsFragment"
+        android:label="@string/title_vehicle_details"
+        tools:layout="@layout/fragment_vehicle_details">
+
+        <action
+            android:id="@+id/navigate_to_brake_system_fragment"
+            app:destination="@+id/navigation_brake_system"/>
+
+        <action
+            android:id="@+id/navigate_to_engine_system_fragment"
+            app:destination="@+id/navigation_engine_system"/>
+
+        <action
+            android:id="@+id/navigate_to_fuel_system_fragment"
+            app:destination="@+id/navigation_fuel_system"/>
+
+        <action
+            android:id="@+id/navigate_to_tyre_system_fragment"
+            app:destination="@+id/navigation_tyre_system"/>
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/navigation_brake_system"
+        android:name="com.aayush.fleetmanager.ui.details.brake.BrakeSystemFragment"
+        android:label="@string/title_brake_system"
+        tools:layout="@layout/fragment_brake_system"/>
+
+    <dialog
+        android:id="@+id/navigation_engine_system"
+        android:name="com.aayush.fleetmanager.ui.details.engine.EngineSystemFragment"
+        android:label="@string/title_engine_system"
+        tools:layout="@layout/fragment_engine_system"/>
+
+    <dialog
+        android:id="@+id/navigation_fuel_system"
+        android:name="com.aayush.fleetmanager.ui.details.fuel.FuelSystemFragment"
+        android:label="@string/title_fuel_system"
+        tools:layout="@layout/fragment_fuel_system"/>
+
+    <dialog
+        android:id="@+id/navigation_tyre_system"
+        android:name="com.aayush.fleetmanager.ui.details.tyre.TyreSystemFragment"
+        android:label="@string/title_tyre_system"
+        tools:layout="@layout/fragment_tyre_system"/>
+
+</navigation>

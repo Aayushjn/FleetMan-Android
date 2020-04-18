@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".view.fragment.DashboardFragment">
+        tools:context=".ui.dashboard.DashboardFragment">
 
         <com.skydoves.androidveil.VeilLayout
             android:id="@+id/veil_count"
@@ -131,7 +131,9 @@
 
         </com.skydoves.androidveil.VeilLayout>
 
-        <include layout="@layout/progress_layout"/>
+        <include
+            android:id="@+id/layout_progress"
+            layout="@layout/progress_layout"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
