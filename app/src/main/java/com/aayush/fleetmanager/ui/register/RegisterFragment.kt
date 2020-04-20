@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.aayush.fleetmanager.App
 import com.aayush.fleetmanager.R
 import com.aayush.fleetmanager.databinding.FragmentRegisterBinding
+import com.aayush.fleetmanager.databinding.ProgressLayoutBinding
 import com.aayush.fleetmanager.di.component.DaggerFragmentComponent
 import com.aayush.fleetmanager.di.component.FragmentComponent
 import com.aayush.fleetmanager.di.module.AppModule
@@ -29,7 +30,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class RegisterFragment: BaseFragment<FragmentRegisterBinding>() {
+class RegisterFragment: BaseFragment<FragmentRegisterBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
             .appModule(AppModule(requireContext().applicationContext as App))
@@ -57,6 +58,7 @@ class RegisterFragment: BaseFragment<FragmentRegisterBinding>() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        _mergeBinding = ProgressLayoutBinding.bind(binding.root)
         return binding.root
     }
 
@@ -128,14 +130,14 @@ class RegisterFragment: BaseFragment<FragmentRegisterBinding>() {
                     .observe(viewLifecycleOwner) {
                         when(it) {
                             is Success<*> -> {
-                                binding.layoutProgress.progressBar.visibility = View.GONE
+                                mergeBinding.progressBar.visibility = View.GONE
                                 findNavController().navigate(RegisterFragmentDirections.navigateToDashboardFragment())
                             }
                             is Failure -> {
-                                binding.layoutProgress.progressBar.visibility = View.GONE
+                                mergeBinding.progressBar.visibility = View.GONE
                                 requireContext().toast(it.reason)
                             }
-                            is Loading -> binding.layoutProgress.progressBar.visibility = View.VISIBLE
+                            is Loading -> mergeBinding.progressBar.visibility = View.VISIBLE
                         }
                     }
             }

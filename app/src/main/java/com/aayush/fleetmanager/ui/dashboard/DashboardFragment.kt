@@ -16,6 +16,7 @@ import com.aayush.fleetmanager.api.RestApi
 import com.aayush.fleetmanager.databinding.DialogAlertsBinding
 import com.aayush.fleetmanager.databinding.DialogInputBinding
 import com.aayush.fleetmanager.databinding.FragmentDashboardBinding
+import com.aayush.fleetmanager.databinding.ProgressLayoutBinding
 import com.aayush.fleetmanager.db.dao.AlertDao
 import com.aayush.fleetmanager.di.component.DaggerFragmentComponent
 import com.aayush.fleetmanager.di.component.FragmentComponent
@@ -35,13 +36,14 @@ import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
+class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
             .appModule(AppModule(requireContext().applicationContext as App))
@@ -79,6 +81,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _mergeBinding = ProgressLayoutBinding.bind(binding.root)
         return binding.root
     }
 
@@ -121,15 +124,15 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
                 dashboardViewModel.getLogoutResult(email).observe(viewLifecycleOwner) {
                     when(it) {
                         is Success<*> -> {
-                            binding.layoutProgress.progressBar.visibility = View.GONE
+                            mergeBinding.progressBar.visibility = View.GONE
                             logoutUser(sharedPreferences)
                             findNavController().navigate(DashboardFragmentDirections.navigateToLoginFragment())
                         }
                         is Failure -> {
-                            binding.layoutProgress.progressBar.visibility = View.GONE
+                            mergeBinding.progressBar.visibility = View.GONE
                             requireContext().toast(it.reason)
                         }
-                        is Loading -> binding.layoutProgress.progressBar.visibility = View.VISIBLE
+                        is Loading -> mergeBinding.progressBar.visibility = View.VISIBLE
                     }
                 }
                 true
@@ -173,19 +176,21 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
                     layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                     setHasFixedSize(true)
 
-                    dashboardViewModel.alertResult.observe(viewLifecycleOwner) {
-                        if (adapter == null) {
-                            adapter = AlertsAdapter(
-                                findNavController(),
-                                email,
-                                role,
-                                it.toMutableList()
-                            ) { dialog.dismiss() }
-                        } else {
-                            (adapter as AlertsAdapter).submitList(it)
-                        }
-                        if (it.isNotEmpty()) {
-                            dialogBinding.btnClear.visibility = View.VISIBLE
+                    lifecycleScope.launch {
+                        dashboardViewModel.alertResult.collect {
+                            if (adapter == null) {
+                                adapter = AlertsAdapter(
+                                    findNavController(),
+                                    email,
+                                    role,
+                                    it.toMutableList()
+                                ) { dialog.dismiss() }
+                            } else {
+                                (adapter as AlertsAdapter).submitList(it)
+                            }
+                            if (it.isNotEmpty()) {
+                                dialogBinding.btnClear.visibility = View.VISIBLE
+                            }
                         }
                     }
                 }
@@ -301,9 +306,11 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
     }
 
     private fun setupBadge() {
-        dashboardViewModel.alertCountResult.observe(viewLifecycleOwner) {
-            alertCountTextView.text = it.toString()
-            alertCountTextView.showIf(it != 0)
+        lifecycleScope.launch {
+            dashboardViewModel.alertCountResult.collect {
+                alertCountTextView.text = it.toString()
+                alertCountTextView.showIf(it != 0)
+            }
         }
     }
 }

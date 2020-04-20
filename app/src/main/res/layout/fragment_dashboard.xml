@@ -131,9 +131,7 @@
 
         </com.skydoves.androidveil.VeilLayout>
 
-        <include
-            android:id="@+id/layout_progress"
-            layout="@layout/progress_layout"/>
+        <include layout="@layout/progress_layout"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

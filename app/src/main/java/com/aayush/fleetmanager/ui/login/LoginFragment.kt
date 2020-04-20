@@ -12,6 +12,7 @@ import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.aayush.fleetmanager.App
 import com.aayush.fleetmanager.databinding.FragmentLoginBinding
+import com.aayush.fleetmanager.databinding.ProgressLayoutBinding
 import com.aayush.fleetmanager.di.component.DaggerFragmentComponent
 import com.aayush.fleetmanager.di.component.FragmentComponent
 import com.aayush.fleetmanager.di.module.AppModule
@@ -27,7 +28,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class LoginFragment: BaseFragment<FragmentLoginBinding>() {
+class LoginFragment: BaseFragment<FragmentLoginBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
             .appModule(AppModule(requireContext().applicationContext as App))
@@ -52,6 +53,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _mergeBinding = ProgressLayoutBinding.bind(binding.root)
         return binding.root
     }
 
@@ -93,17 +95,17 @@ class LoginFragment: BaseFragment<FragmentLoginBinding>() {
                 loginViewModel.getLoginResult(email!!, password!!).observe(viewLifecycleOwner) {
                     when(it) {
                         is Success<*> -> {
-                            binding.layoutProgress.progressBar.visibility = View.GONE
+                            mergeBinding.progressBar.visibility = View.GONE
                             val role: String = (it.data!! as User).role.toString()
                             loginUser(sharedPreferences, email!!, role)
 
                             findNavController().navigate(LoginFragmentDirections.navigateToDashboardFragment())
                         }
                         is Failure -> {
-                            binding.layoutProgress.progressBar.visibility = View.GONE
+                            mergeBinding.progressBar.visibility = View.GONE
                             requireContext().toast(it.reason)
                         }
-                        is Loading -> binding.layoutProgress.progressBar.visibility = View.VISIBLE
+                        is Loading -> mergeBinding.progressBar.visibility = View.VISIBLE
                     }
                 }
             }

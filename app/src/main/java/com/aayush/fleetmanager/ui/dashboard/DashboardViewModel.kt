@@ -17,6 +17,7 @@ import com.aayush.fleetmanager.util.common.State.Loading
 import com.aayush.fleetmanager.util.common.State.Success
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.util.*
 import javax.inject.Inject
@@ -37,13 +38,11 @@ class DashboardViewModel(context: Context): ViewModel() {
     @Inject lateinit var userRepository: UserRepository
     @Inject lateinit var alertDao: AlertDao
 
-    val alertCountResult: LiveData<Int>
+    val alertCountResult: Flow<Int>
         get() = alertDao.getAlertCountDistinctUntilChanged()
-            .asLiveData(viewModelScope.coroutineContext)
 
-    val alertResult: LiveData<List<Alert>>
+    val alertResult: Flow<List<Alert>>
         get() = alertDao.getAllAlertsDistinctUntilChanged()
-            .asLiveData(viewModelScope.coroutineContext)
 
     private val _vehicleMinimalsResult: LiveData<State>
 

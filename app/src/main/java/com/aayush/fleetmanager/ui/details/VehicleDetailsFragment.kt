@@ -34,7 +34,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding>() {
+class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothing>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
             .appModule(AppModule(requireContext().applicationContext as App))
