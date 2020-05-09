@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.details.tyre
+package com.aayush.fleetmanager.ui.fragment.details.tyre
 
 import android.os.Bundle
 import android.view.LayoutInflater

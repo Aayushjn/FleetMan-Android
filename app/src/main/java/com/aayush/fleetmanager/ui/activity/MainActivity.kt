@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.view
+package com.aayush.fleetmanager.ui.activity
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -49,15 +49,6 @@ class MainActivity: AppCompatActivity() {
                 )
             )
         )
-
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.navigation_dashboard -> supportActionBar?.title = getString(R.string.title_dashboard)
-                R.id.navigation_login -> supportActionBar?.title = getString(R.string.title_login)
-                R.id.navigation_register -> supportActionBar?.title = getString(R.string.title_register)
-                R.id.navigation_vehicle_details -> supportActionBar?.title = getString(R.string.title_vehicle_details)
-            }
-        }
     }
 
     override fun attachBaseContext(newBase: Context?) =

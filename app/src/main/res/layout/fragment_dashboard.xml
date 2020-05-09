@@ -6,12 +6,12 @@
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#090F0F">
+    android:background="#090F0F"
+    tools:context=".ui.fragment.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".ui.dashboard.DashboardFragment">
+        android:layout_height="wrap_content">
 
         <com.skydoves.androidveil.VeilLayout
             android:id="@+id/veil_count"
@@ -36,7 +36,8 @@
                         android:id="@+id/text_vehicle_count"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
-                        android:textSize="50sp"
+                        android:textColor="@android:color/black"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
                         android:gravity="center"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
@@ -49,7 +50,7 @@
                         android:id="@+id/text_vehicles"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:textSize="25sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                         android:gravity="center"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
@@ -63,7 +64,7 @@
                         android:id="@+id/text_hatchback_count"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
-                        android:textSize="17sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:paddingBottom="5dp"
@@ -79,7 +80,7 @@
                         android:id="@+id/text_sedan_count"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
-                        android:textSize="17sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:paddingBottom="5dp"
@@ -93,7 +94,7 @@
                         android:id="@+id/text_suv_count"
                         android:layout_width="0dp"
                         android:layout_height="60dp"
-                        android:textSize="17sp"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
                         android:paddingBottom="5dp"

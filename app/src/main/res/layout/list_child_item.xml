@@ -11,7 +11,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_vehicle_vin"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="?android:attr/expandableListPreferredChildPaddingLeft"
         android:paddingTop="10dp"
@@ -19,7 +19,6 @@
         android:text="@string/set_vin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="RtlSymmetry" />
 
     <com.google.android.material.textview.MaterialTextView

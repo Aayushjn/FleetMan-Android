@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/title_engine_system"
-        android:textSize="20sp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/set_health"
-        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_title"/>
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/set_health"
-        android:textSize="18sp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
         app:layout_constraintTop_toBottomOf="@id/text_engine_battery_capacity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

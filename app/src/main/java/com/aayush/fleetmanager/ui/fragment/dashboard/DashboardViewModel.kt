@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.dashboard
+package com.aayush.fleetmanager.ui.fragment.dashboard
 
 import android.content.Context
 import androidx.lifecycle.*
@@ -16,7 +16,6 @@ import com.aayush.fleetmanager.util.common.State
 import com.aayush.fleetmanager.util.common.State.Loading
 import com.aayush.fleetmanager.util.common.State.Success
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import java.util.*
@@ -24,7 +23,6 @@ import javax.inject.Inject
 
 typealias MinimalReturn = Pair<List<String>, HashMap<String, List<VehicleMinimal>>>
 
-@ExperimentalCoroutinesApi
 @Suppress("UNCHECKED_CAST")
 class DashboardViewModel(context: Context): ViewModel() {
     private val component: ViewModelComponent by lazy {
@@ -69,7 +67,7 @@ class DashboardViewModel(context: Context): ViewModel() {
                             "Hatchbacks",
                             "Sedans",
                             "SUVs"
-                        ) to (it.data!! as HashMap<String, List<VehicleMinimal>>)
+                        ) to (it.data as HashMap<String, List<VehicleMinimal>>)
                     )
                 } else {
                     Loading
@@ -83,7 +81,6 @@ class DashboardViewModel(context: Context): ViewModel() {
     }
 }
 
-@ExperimentalCoroutinesApi
 @Suppress("UNCHECKED_CAST")
 class DashboardViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

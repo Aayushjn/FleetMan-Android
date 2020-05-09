@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -50,7 +49,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="VIN: 12345678912345678"
@@ -61,7 +60,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_vin"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="License Plate: KA25ML7486"
@@ -72,7 +71,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_license_plate"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Model: Maruti Swift DZire"
@@ -83,7 +82,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_model"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Driver: Extraordinarily Big Name"
@@ -119,7 +118,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Braking System Health: 76.9"
@@ -130,7 +129,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_brake_health"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Tyre System Health: 76.9"
@@ -141,7 +140,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_tyre_health"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Engine System Health: 76.9"
@@ -152,7 +151,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_engine_health"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Fuel System Health: 76.9"
@@ -163,7 +162,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="5dp"
-                                android:textSize="18sp"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                                 app:layout_constraintTop_toBottomOf="@id/text_vehicle_fuel_health"
                                 app:layout_constraintStart_toStartOf="parent"
                                 tools:text="Overall System Health: 76.9"
@@ -196,7 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_brake_system"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:drawableStart="@drawable/ic_brake"
                 android:drawablePadding="5dp"
                 android:layout_gravity="center_vertical"/>
@@ -220,7 +219,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_tyre_system"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:drawableStart="@drawable/ic_tyre"
                 android:drawablePadding="5dp"
                 android:layout_gravity="center_vertical"/>
@@ -244,7 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_engine_system"
-                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:drawableStart="@drawable/ic_engine"
                 android:drawablePadding="5dp"
                 android:layout_gravity="center_vertical"/>
@@ -271,7 +270,7 @@
                 android:drawableStart="@drawable/ic_fuel"
                 android:drawablePadding="5dp"
                 android:text="@string/title_fuel_system"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
         </com.google.android.material.card.MaterialCardView>
 

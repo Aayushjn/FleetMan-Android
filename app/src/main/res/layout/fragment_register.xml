@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient_bg"
-    tools:context=".ui.register.RegisterFragment">
+    tools:context=".ui.fragment.register.RegisterFragment">
 
     <ScrollView
         android:id="@+id/scroll"
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/ic_launcher_round"
                 android:scaleX="2"
                 android:scaleY="2"
                 android:contentDescription="@string/app_name"

@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.login
+package com.aayush.fleetmanager.ui.fragment.login
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -24,10 +24,8 @@ import com.aayush.fleetmanager.util.android.isBlankOrEmpty
 import com.aayush.fleetmanager.util.android.loginUser
 import com.aayush.fleetmanager.util.android.toast
 import com.aayush.fleetmanager.util.common.State.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class LoginFragment: BaseFragment<FragmentLoginBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
@@ -96,7 +94,7 @@ class LoginFragment: BaseFragment<FragmentLoginBinding, ProgressLayoutBinding>()
                     when(it) {
                         is Success<*> -> {
                             mergeBinding.progressBar.visibility = View.GONE
-                            val role: String = (it.data!! as User).role.toString()
+                            val role: String = (it.data as User).role.toString()
                             loginUser(sharedPreferences, email!!, role)
 
                             findNavController().navigate(LoginFragmentDirections.navigateToDashboardFragment())

@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.register
+package com.aayush.fleetmanager.ui.fragment.register
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -26,10 +26,8 @@ import com.aayush.fleetmanager.util.android.isBlankOrEmpty
 import com.aayush.fleetmanager.util.android.toast
 import com.aayush.fleetmanager.util.common.DEFAULT_LOCALE
 import com.aayush.fleetmanager.util.common.State.*
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class RegisterFragment: BaseFragment<FragmentRegisterBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()

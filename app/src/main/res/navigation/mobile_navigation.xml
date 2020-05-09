@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.aayush.fleetmanager.ui.dashboard.DashboardFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard">
 
@@ -41,7 +41,7 @@
 
     <fragment
         android:id="@+id/navigation_login"
-        android:name="com.aayush.fleetmanager.ui.login.LoginFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.login.LoginFragment"
         android:label="@string/title_login"
         tools:layout="@layout/fragment_login">
 
@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/navigation_register"
-        android:name="com.aayush.fleetmanager.ui.register.RegisterFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.register.RegisterFragment"
         android:label="@string/title_register"
         tools:layout="@layout/fragment_register">
 
@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/navigation_vehicle_details"
-        android:name="com.aayush.fleetmanager.ui.details.VehicleDetailsFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.details.VehicleDetailsFragment"
         android:label="@string/title_vehicle_details"
         tools:layout="@layout/fragment_vehicle_details">
 
@@ -103,25 +103,25 @@
 
     <dialog
         android:id="@+id/navigation_brake_system"
-        android:name="com.aayush.fleetmanager.ui.details.brake.BrakeSystemFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.details.brake.BrakeSystemFragment"
         android:label="@string/title_brake_system"
         tools:layout="@layout/fragment_brake_system"/>
 
     <dialog
         android:id="@+id/navigation_engine_system"
-        android:name="com.aayush.fleetmanager.ui.details.engine.EngineSystemFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.details.engine.EngineSystemFragment"
         android:label="@string/title_engine_system"
         tools:layout="@layout/fragment_engine_system"/>
 
     <dialog
         android:id="@+id/navigation_fuel_system"
-        android:name="com.aayush.fleetmanager.ui.details.fuel.FuelSystemFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.details.fuel.FuelSystemFragment"
         android:label="@string/title_fuel_system"
         tools:layout="@layout/fragment_fuel_system"/>
 
     <dialog
         android:id="@+id/navigation_tyre_system"
-        android:name="com.aayush.fleetmanager.ui.details.tyre.TyreSystemFragment"
+        android:name="com.aayush.fleetmanager.ui.fragment.details.tyre.TyreSystemFragment"
         android:label="@string/title_tyre_system"
         tools:layout="@layout/fragment_tyre_system"/>
 

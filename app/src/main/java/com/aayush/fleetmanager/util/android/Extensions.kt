@@ -4,17 +4,12 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.Toast
-import androidx.annotation.IdRes
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigator
 
 fun EditText.asString(): String = text.toString().trim()
 
@@ -73,15 +68,3 @@ fun ConnectivityManager.isNetworkAvailable(): Boolean =
     } else {
         activeNetworkInfo?.isConnectedOrConnecting ?: false
     }
-
-fun NavController.navigateSafe(
-    @IdRes currentFragment: Int,
-    @IdRes navigateAction: Int,
-    args: Bundle? = null,
-    navOptions: NavOptions? = null,
-    navigatorExtras: Navigator.Extras? = null
-) {
-    if (currentDestination?.id == currentFragment) {
-        navigate(navigateAction, args, navOptions, navigatorExtras)
-    }
-}

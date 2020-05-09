@@ -11,11 +11,9 @@ import com.aayush.fleetmanager.di.module.AppModule
 import com.aayush.fleetmanager.di.module.RoomModule
 import com.aayush.fleetmanager.util.common.EXTRA_ALERT_ID
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class DeleteAlertService: IntentService("DeleteAlertService") {
     private val component: ServiceComponent by lazy {
         DaggerServiceComponent.builder()

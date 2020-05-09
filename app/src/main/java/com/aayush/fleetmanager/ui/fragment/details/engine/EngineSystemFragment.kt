@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.details.engine
+package com.aayush.fleetmanager.ui.fragment.details.engine
 
 import android.os.Bundle
 import android.view.LayoutInflater

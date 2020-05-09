@@ -20,19 +20,17 @@ import com.aayush.fleetmanager.di.module.AppModule
 import com.aayush.fleetmanager.di.module.RoomModule
 import com.aayush.fleetmanager.model.Alert
 import com.aayush.fleetmanager.model.AlertType
+import com.aayush.fleetmanager.ui.activity.MainActivity
 import com.aayush.fleetmanager.util.android.getLoggedInUserEmailAndRole
 import com.aayush.fleetmanager.util.common.*
-import com.aayush.fleetmanager.view.MainActivity
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class FirebaseService: FirebaseMessagingService() {
     private val component: ServiceComponent by lazy {
         DaggerServiceComponent.builder()

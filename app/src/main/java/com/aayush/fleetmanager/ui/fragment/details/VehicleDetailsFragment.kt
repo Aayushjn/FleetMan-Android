@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.details
+package com.aayush.fleetmanager.ui.fragment.details
 
 import android.graphics.Typeface.BOLD
 import android.os.Bundle
@@ -23,17 +23,14 @@ import com.aayush.fleetmanager.di.module.RoomModule
 import com.aayush.fleetmanager.model.Role
 import com.aayush.fleetmanager.model.Vehicle
 import com.aayush.fleetmanager.util.android.base.BaseFragment
-import com.aayush.fleetmanager.util.android.navigateSafe
 import com.aayush.fleetmanager.util.android.toast
 import com.aayush.fleetmanager.util.common.*
 import com.aayush.fleetmanager.util.common.State.*
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothing>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
@@ -231,8 +228,7 @@ class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothin
 
         binding.cardBrakeSystem.setOnClickListener {
             with(vehicle.brakes!!) {
-                findNavController().navigateSafe(
-                    R.id.navigation_vehicle_details,
+                findNavController().navigate(
                     R.id.navigate_to_brake_system_fragment,
                     bundleOf(
                         EXTRA_BRAKE_FLUID_LEVEL to fluidLevel,
@@ -245,8 +241,7 @@ class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothin
 
         binding.cardEngineSystem.setOnClickListener {
             with(vehicle.engine!!) {
-                findNavController().navigateSafe(
-                    R.id.navigation_vehicle_details,
+                findNavController().navigate(
                     R.id.navigate_to_engine_system_fragment,
                     bundleOf(
                         EXTRA_ENGINE_BATTERY_CAPACITY to batteryCapacity,
@@ -258,8 +253,7 @@ class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothin
 
         binding.cardFuelSystem.setOnClickListener {
             with(vehicle.fuel!!) {
-                findNavController().navigateSafe(
-                    R.id.navigation_vehicle_details,
+                findNavController().navigate(
                     R.id.navigate_to_fuel_system_fragment,
                     bundleOf(
                         EXTRA_FUEL_CAPACITY to capacity,
@@ -273,8 +267,7 @@ class VehicleDetailsFragment: BaseFragment<FragmentVehicleDetailsBinding, Nothin
 
         binding.cardTyreSystem.setOnClickListener {
             with(vehicle.tyres!!) {
-                findNavController().navigateSafe(
-                    R.id.navigation_vehicle_details,
+                findNavController().navigate(
                     R.id.navigate_to_tyre_system_fragment,
                     bundleOf(
                         EXTRA_TYRE_PRESSURE to pressure,

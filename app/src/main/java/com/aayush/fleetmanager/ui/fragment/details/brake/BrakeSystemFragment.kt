@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.details.brake
+package com.aayush.fleetmanager.ui.fragment.details.brake
 
 import android.os.Bundle
 import android.view.LayoutInflater

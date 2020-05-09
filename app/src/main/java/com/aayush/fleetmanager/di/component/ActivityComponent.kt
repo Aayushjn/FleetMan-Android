@@ -1,7 +1,7 @@
 package com.aayush.fleetmanager.di.component
 
 import com.aayush.fleetmanager.di.module.AppModule
-import com.aayush.fleetmanager.view.MainActivity
+import com.aayush.fleetmanager.ui.activity.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 

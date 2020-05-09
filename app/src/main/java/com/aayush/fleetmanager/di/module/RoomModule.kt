@@ -7,10 +7,8 @@ import com.aayush.fleetmanager.db.AppDatabase
 import com.aayush.fleetmanager.db.dao.AlertDao
 import dagger.Module
 import dagger.Provides
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Singleton
 
-@ExperimentalCoroutinesApi
 @Module
 class RoomModule(private val app: App) {
     @Provides

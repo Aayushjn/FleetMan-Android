@@ -7,7 +7,7 @@ sealed class State {
     /**
      * Operation completed successfully. Used to carry data
      */
-    open class Success<T>(val data: T? = null): State()
+    data class Success<T>(val data: T): State()
 
     /**
      * Operation currently underway

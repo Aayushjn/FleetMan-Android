@@ -5,11 +5,9 @@ import androidx.room.Dao
 import androidx.room.Query
 import com.aayush.fleetmanager.model.Alert
 import com.aayush.fleetmanager.util.android.base.BaseDao
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
 
-@ExperimentalCoroutinesApi
 @Dao
 abstract class AlertDao: BaseDao<Alert> {
     @Query("SELECT * FROM alert")

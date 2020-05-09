@@ -1,4 +1,4 @@
-package com.aayush.fleetmanager.ui.dashboard
+package com.aayush.fleetmanager.ui.fragment.dashboard
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -35,14 +35,12 @@ import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import javax.inject.Inject
 
-@ExperimentalCoroutinesApi
 class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBinding>() {
     private val component: FragmentComponent by lazy(LazyThreadSafetyMode.NONE) {
         DaggerFragmentComponent.builder()
@@ -149,8 +147,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBi
                     .setPositiveButton("Search") { dialog, _ ->
                         dialog.dismiss()
                         if (!dialogBinding.editVin.isBlankOrEmpty()) {
-                            findNavController().navigateSafe(
-                                R.id.navigation_dashboard,
+                            findNavController().navigate(
                                 R.id.navigate_to_vehicle_details_fragment,
                                 bundleOf(
                                     EXTRA_EMAIL to email,
@@ -222,7 +219,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBi
                 is Loading -> binding.veilCount.veil()
                 is Success<*> -> {
                     binding.veilCount.unVeil()
-                    with(it.data!! as VehicleCount) {
+                    with(it.data as VehicleCount) {
                         val totalCount: Int = hatchbacks + sedans + suvs
                         with(binding) {
                             textVehicleCount.text = totalCount.toString()
@@ -258,7 +255,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBi
                     is Loading -> binding.veilVehicles.veil()
                     is Success<*> -> {
                         binding.veilVehicles.unVeil()
-                        val minimalReturn = it.data!! as MinimalReturn
+                        val minimalReturn = it.data as MinimalReturn
                         setAdapter(
                             VehicleListAdapter(
                                 requireContext(),
@@ -291,8 +288,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding, ProgressLayoutBi
                     .toString()
                     .substring(5)
                     .trim()
-                findNavController().navigateSafe(
-                    R.id.navigation_dashboard,
+                findNavController().navigate(
                     R.id.navigate_to_vehicle_details_fragment,
                     bundleOf(
                         EXTRA_EMAIL to email,

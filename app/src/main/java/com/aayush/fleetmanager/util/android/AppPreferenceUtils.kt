@@ -6,11 +6,12 @@ import com.aayush.fleetmanager.util.common.PREF_EMAIL
 import com.aayush.fleetmanager.util.common.PREF_IS_LOGGED_IN
 import com.aayush.fleetmanager.util.common.PREF_ROLE
 
-fun loginUser(sharedPreferences: SharedPreferences, emailId: String, role: String) = sharedPreferences.edit {
-    putString(PREF_EMAIL, emailId)
-    putString(PREF_ROLE, role)
-    putBoolean(PREF_IS_LOGGED_IN, true)
-}
+fun loginUser(sharedPreferences: SharedPreferences, emailId: String, role: String) =
+    sharedPreferences.edit {
+        putString(PREF_EMAIL, emailId)
+        putString(PREF_ROLE, role)
+        putBoolean(PREF_IS_LOGGED_IN, true)
+    }
 
 fun logoutUser(sharedPreferences: SharedPreferences) = sharedPreferences.edit {
     putString(PREF_EMAIL, "")
